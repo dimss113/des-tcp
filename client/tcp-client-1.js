@@ -4,13 +4,14 @@ const { EncryptMessage } = require('../DES/encrypt');
 const { DecryptMessage } = require('../DES/decrypt');
 // Configuration ===================================
 const port = 8888;
+const serverIP = '192.172.1.2'
 //=================================================
 
 // Create the socket client.
 const client = new net.Socket();
 
 // Connect to the server on the configured port
-client.connect(port, function () {
+client.connect(port, serverIP, function () {
     // Log when the connection is established
     console.log(`Client 1: Connected to server on port ${port}`);
 
