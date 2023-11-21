@@ -30,7 +30,9 @@ function onClientConnection(sock) {
     // Handle the client data.
     sock.on('data', function (data) {
         // Log data received from the client
+        let decryptedMessage = DecryptMessage(`${data}`, "test1234");
         console.log(`>> data received : ${data}`);
+        console.log(`>> data received : ${decryptedMessage}`);
 
         // prepare and send a response to the client
         let serverResp = "Hello from the server";
