@@ -13,22 +13,22 @@ const client = new net.Socket();
 // Connect to the server on the configured port
 client.connect(port, serverIP, function () {
     // Log when the connection is established
-    console.log(`Client 1: Connected to server on port ${port}`);
+    console.log(`Client 2: Connected to server on port ${port}`);
 
     // Try to send data to the server
-    client.write('Hi from the client 1');
+    client.write('Hi from the client 2');
 });
 
 // Handle data coming from the server
 client.on('data', function (data) {
     let decryptedMessage = DecryptMessage(`${data}`, "test1234");
-    console.log(`Client 1 received from server: ${data}`);
-    console.log(`Client 1 received from server: ${decryptedMessage}`);
+    console.log(`Client 2 received from server: ${data}`);
+    console.log(`Client 2 received from server: ${decryptedMessage}`);
 });
 
 // Handle connection close
 client.on('close', function () {
-    console.log('Client 1: Connection Closed');
+    console.log('Client 2: Connection Closed');
 });
 
 // Handle error
