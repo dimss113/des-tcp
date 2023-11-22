@@ -44,6 +44,6 @@ const rl = readline.createInterface({
 
 // Read input from the user and send it to the server
 rl.on('line', function (input) {
-    let encryptedMessage = EncryptMessage(input, "test1234");
+    let encryptedMessage = EncryptMessage(input, "abcd1235");
     client.write(encryptedMessage);
 });
